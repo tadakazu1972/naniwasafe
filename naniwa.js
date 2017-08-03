@@ -131,6 +131,8 @@ function drawMap(){
 		};
 		xhr4.open("get", "naniwa.csv", true);
 		xhr4.send(null);
+
+		clickCheckbox();
 }
 
 //読み込んだcsvからinfowindowと左側に表示する施設HTML生成
@@ -190,7 +192,7 @@ function drawFacilities(filename, iconname){
 //防犯カメラinfowindow
 function attachMessage2(getmarker, address, place, year, number) {
 	//Infowindow生成
-	var infowin = new google.maps.InfoWindow({ content:"住所:"+address+"</br>設置場所："+place+"</br>設事業名"+year+"</br>設置台数"+number});
+	var infowin = new google.maps.InfoWindow({ content:"住所:"+address+"</br>設置場所:"+place+"</br>事業名:"+year+"</br>設置台数:"+number});
 	//マウスオーバー
 	google.maps.event.addListener(getmarker, 'mouseover', function() {
 		infowin.open(getmarker.getMap(), getmarker);
@@ -201,8 +203,7 @@ function attachMessage2(getmarker, address, place, year, number) {
 	});
 }
 
-/*
-$(function(){
+function clickCheckbox(){
 	//小学校アイコンのチェックボックスクリック
 	$('#小学校icon').on('click', function(){
 		//チェックをはずしたら消す
@@ -258,5 +259,11 @@ $(function(){
 					allcircles3[i].setVisible(true);
 			}
 		}
+	});
+}
+
+/*
+$(function(){
+
 	});
 	*/
