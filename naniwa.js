@@ -18,7 +18,7 @@ function drawMap(){
   //初期設定
 	var map = document.getElementById("map_canvas");
 	var options = {
-		zoom: 13,
+		zoom: 15,
 		center: new google.maps.LatLng(posY, posX),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
