@@ -1,17 +1,13 @@
 //マップオブジェクト設定
 var mapObj;
-//小中一貫校を緯度・軽度の初期値に設定
+//浪速区の中心地を安養寺の緯度・軽度の初期値に設定
 var posX=135.49515;
 var posY=34.659552;
-//小中学校あわせた全マーカーと円の配列（表示、非表示で操作するため）
+//小中校のマーカーと円の配列（表示、非表示で操作するため）
 var allmarkers = new Array();
 var allcircles = new Array();
 var allcircles2 = new Array();
 var allcircles3 = new Array();
-//介護施設の全マーカー
-var allmarkers2 = new Array();
-//その他施設のマーカー
-var allmarkers3 = new Array();
 
 //マップ描画
 function drawMap(){
@@ -51,7 +47,6 @@ function drawMap(){
 				title: data[2]
 			});
 			//生成したマーカーをグローバル配列に保存
-			marker.category = "小学校";
 			allmarkers.push(marker);
 			//csvファイル　施設名:data[2] 所在地:data[3] TEL:data[4] 緯度:data[1] 経度:data[0]
 			attachMessage(marker, data[2], data[3], data[4], data[1], data[0]);
@@ -139,7 +134,6 @@ function drawMap(){
 function attachMessage(getmarker, name, add, tel, posy, posx) {
 	//Infowindow生成
 	var infowin = new google.maps.InfoWindow({ content:name+"</br>"+"住所:"+add+"</br>"+"問合せ先："+tel+"</br>"});
-
 	//マウスオーバー
 	google.maps.event.addListener(getmarker, 'mouseover', function() {
 		infowin.open(getmarker.getMap(), getmarker);
@@ -150,7 +144,7 @@ function attachMessage(getmarker, name, add, tel, posy, posx) {
 	});
 }
 
-//施設描画
+//防犯カメラ描画
 function drawFacilities(filename, iconname){
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function(){
@@ -178,9 +172,6 @@ function drawFacilities(filename, iconname){
 				icon: marker_image,
 				title: data[2]
 			});
-			//生成したマーカーをグローバル配列に保存
-			marker.category = data[5];
-			//allmarkers2.push(marker);
 			//csvファイル　住所:data[2] 設置場所:data[3] 事業名:data[4] 設置台数:data[5]
 			attachMessage2(marker, data[2], data[3], data[4], data[5]);
 		}
