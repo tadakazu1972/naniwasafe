@@ -261,9 +261,3 @@ function clickCheckbox(){
 		}
 	});
 }
-
-/*
-$(function(){
-
-	});
-	*/
