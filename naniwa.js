@@ -1,8 +1,8 @@
 //マップオブジェクト設定
 var mapObj;
 //小中一貫校を緯度・軽度の初期値に設定
-var posX=135.50279;
-var posY=34.657983;
+var posX=135.49515;
+var posY=34.659552;
 //小中学校あわせた全マーカーと円の配列（表示、非表示で操作するため）
 var allmarkers = new Array();
 var allcircles = new Array();
