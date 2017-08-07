@@ -252,3 +252,37 @@ function clickCheckbox(){
 		}
 	});
 }
+
+function getPosition(){
+	//現在地取得
+  //Geolocation API対応チェック
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			//取得成功
+			function(position) {
+			  var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			  var infowindow = new google.maps.InfoWindow({ map: mapObj, position: pos, content: '現在地'});
+			  mapObj.setCenter(pos);
+		  },
+		  //取得失敗
+		  function(error){
+			  switch(error.code){
+				  case 1: //PERMISSION_DENIED
+					  alert("この端末の位置情報利用が許可されていません");
+					  break;
+				  case 2: //POSITION_UNAVAILABLE
+					  alert("現在地が取得できませんできした");
+					  break;
+				  case 3: //TIMEOUT
+					  alert("時間切れになりました");
+					  break;
+				  default:
+					  alert("エラーが出ました(error code:"+error.code+")");
+					  break;
+			  }
+		  }
+	  );
+	} else {
+		alert("この端末では位置情報が取得できません");
+	}
+}

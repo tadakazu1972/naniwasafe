@@ -60,6 +60,15 @@ body {
 	font-size:xx-large;
 }
 
+#currentPosition {
+	position: absolute;
+	top: 70%;
+	left:95%;
+	background: #66e;
+	color: #fff;
+	cursor: pointer;
+}
+
 /*RESPONSIVE: スマートフォン ウィンドウ幅600px以下*/
 @media screen and (max-width:600px) {
 	#map_container {
