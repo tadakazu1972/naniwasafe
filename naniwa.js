@@ -126,8 +126,6 @@ function drawMap(){
 		};
 		xhr4.open("get", "naniwa.csv", true);
 		xhr4.send(null);
-
-		clickCheckbox();
 }
 
 //読み込んだcsvからinfowindowと左側に表示する施設HTML生成
