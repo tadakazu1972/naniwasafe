@@ -194,64 +194,64 @@ function attachMessage2(getmarker, address, place, year, number) {
 	});
 }
 
+//小学校アイコンのチェックボックスクリック
 function clickCheckbox(){
-	//小学校アイコンのチェックボックスクリック
-	$('#小学校icon').on('click', function(){
-		//チェックをはずしたら消す
-		if (!this.checked){
-			for (var i=0;i<allmarkers.length;i++){　
-					allmarkers[i].setVisible(false);
-			}
-		} else {
-		//そうでなければチェックがついたので表示する
-			for (var i=0;i<allmarkers.length;i++){
-					allmarkers[i].setVisible(true);
-			}
+	//チェックをはずしたら消す
+	if (!document.checkbox.elements[0].checked){  //document.フォーム名.elements[].checked
+		for (var i=0;i<allmarkers.length;i++){　
+				allmarkers[i].setVisible(false);
 		}
-	});
-	//小学校半径50mのチェックボックスクリック
-	$('#小学校circle').on('click', function(){
-		//チェックをはずしたら消す
-		if (!this.checked){
-			for (var i=0;i<allcircles.length;i++){
-					allcircles[i].setVisible(false);
-			}
-		} else {
-		//そうでなければチェックがついたので表示する
-			for (var i=0;i<allcircles.length;i++){
-					allcircles[i].setVisible(true);
-			}
+	} else {
+	//そうでなければチェックがついたので表示する
+		for (var i=0;i<allmarkers.length;i++){
+				allmarkers[i].setVisible(true);
 		}
-	});
-	//小学校半径100mのチェックボックスクリック
-	$('#小学校circle2').on('click', function(){
-		//チェックをはずしたら消す
-		if (!this.checked){
-			for (var i=0;i<allcircles2.length;i++){
-					allcircles2[i].setVisible(false);
-			}
-		} else {
-		//そうでなければチェックがついたので表示する
-			for (var i=0;i<allcircles2.length;i++){
-					allcircles2[i].setVisible(true);
-			}
+	}
+}
+
+//小学校半径50mのチェックボックスクリック
+function clickCheckbox1(){
+	//チェックをはずしたら消す
+	if (!document.checkbox.elements[1].checked){
+		for (var i=0;i<allcircles.length;i++){
+				allcircles[i].setVisible(false);
 		}
-	});
+	} else {
+	//そうでなければチェックがついたので表示する
+		for (var i=0;i<allcircles.length;i++){
+				allcircles[i].setVisible(true);
+		}
+	}
+}
+
+//小学校半径100mのチェックボックスクリック
+function clickCheckbox2(){
+	//チェックをはずしたら消す
+	if (!document.checkbox.elements[2].checked){
+		for (var i=0;i<allcircles2.length;i++){
+				allcircles2[i].setVisible(false);
+		}
+	} else {
+	//そうでなければチェックがついたので表示する
+		for (var i=0;i<allcircles2.length;i++){
+				allcircles2[i].setVisible(true);
+		}
+	}
 }
 
 //小学校半径200mのチェックボックスクリック
 function clickCheckbox3(){
-		//チェックをはずしたら消す
-		if (!document.checkbox.elements[3].checked){
-			for (var i=0;i<allcircles3.length;i++){
-					allcircles3[i].setVisible(false);
-			}
-		} else {
-		//そうでなければチェックがついたので表示する
-			for (var i=0;i<allcircles3.length;i++){
-					allcircles3[i].setVisible(true);
-			}
+  //チェックをはずしたら消す
+  if (!document.checkbox.elements[3].checked){
+	  for (var i=0;i<allcircles3.length;i++){
+			  allcircles3[i].setVisible(false);
 		}
+	} else {
+	//そうでなければチェックがついたので表示する
+		for (var i=0;i<allcircles3.length;i++){
+				allcircles3[i].setVisible(true);
+		}
+	}
 }
 
 function getPosition(){
