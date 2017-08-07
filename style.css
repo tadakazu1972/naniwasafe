@@ -62,8 +62,8 @@ body {
 
 #currentPosition {
 	position: absolute;
-	top: 70%;
-	left:95%;
+	top: 50%;
+	left:90%;
 	background: #66e;
 	color: #fff;
 	cursor: pointer;
