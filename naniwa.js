@@ -241,11 +241,8 @@ function clickCheckbox(){
 
 //小学校半径200mのチェックボックスクリック
 function clickCheckbox3(){
-	var event = new Event('click');
-	var checkbox = document.getElementById("#小学校circle3");
-	checkbox.addEventListener('click', function(){
 		//チェックをはずしたら消す
-		if (!checkbox.checked){
+		if (!document.checkbox.elements[3].checked){
 			for (var i=0;i<allcircles3.length;i++){
 					allcircles3[i].setVisible(false);
 			}
@@ -255,8 +252,6 @@ function clickCheckbox3(){
 					allcircles3[i].setVisible(true);
 			}
 		}
-	});
-	checkbox.dispatchEvent(event);
 }
 
 function getPosition(){
