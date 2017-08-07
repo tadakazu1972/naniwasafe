@@ -242,17 +242,19 @@ function clickCheckbox(){
 //小学校半径200mのチェックボックスクリック
 function clickCheckbox3(){
 	var checkbox = document.getElementById("#小学校circle3");
-	//チェックをはずしたら消す
-	if (!checkbox.checked){
-		for (var i=0;i<allcircles3.length;i++){
-				allcircles3[i].setVisible(false);
+	checkbox.addEventListener('click', function(){
+		//チェックをはずしたら消す
+		if (!this.checked){
+			for (var i=0;i<allcircles3.length;i++){
+					allcircles3[i].setVisible(false);
+			}
+		} else {
+		//そうでなければチェックがついたので表示する
+			for (var i=0;i<allcircles3.length;i++){
+					allcircles3[i].setVisible(true);
+			}
 		}
-	} else {
-	//そうでなければチェックがついたので表示する
-		for (var i=0;i<allcircles3.length;i++){
-				allcircles3[i].setVisible(true);
-		}
-	}
+	});
 }
 
 function getPosition(){
