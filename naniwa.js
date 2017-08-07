@@ -237,11 +237,6 @@ function clickCheckbox(){
 			}
 		}
 	});
-
-	$('#小学校circle3').on('click', function(){
-
-
-	});
 }
 
 //小学校半径200mのチェックボックスクリック
