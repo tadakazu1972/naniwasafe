@@ -92,7 +92,7 @@ function drawMap(){
 			allcircles.push(circle);
 		}
 	};
-	xhr.open("get", "shochugakkou.csv", true);
+	xhr.open("get", "elementaryschool.csv", true);
 	xhr.send(null);
 
 	//防犯カメラ（公設置）
